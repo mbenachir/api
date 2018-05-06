@@ -1,9 +1,7 @@
 <?php
-$json=file_get_contents("https://www.youtube.com/get_video_info?video_id=Qc3js9c2tMc");
+$json=file_get_contents("https://www.youtube.com/get_video_info?video_id="+GET['id']);
 parse_str($json);
-//  parse_str($url_encoded_fmt_stream_map,$arr);
- $arr=explode(',',$url_encoded_fmt_stream_map);
- //echo $arr[0];
+$arr=explode(',',$url_encoded_fmt_stream_map);
  foreach($arr as $item){
      parse_str($item);
     //  echo $url."<br/>........................<br/>/////".$quality."...........................<br/>";
@@ -12,11 +10,3 @@ parse_str($json);
     }
      
  }
-/*
-$arr=explode(',',$url_encoded_fst_stream_map);
-foreach($arr as $item){
-    parse_str($item);
-    print_r($vdata);
-}
-
-print_r($json);*/
