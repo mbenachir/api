@@ -6,7 +6,7 @@ $arr=explode(',',$url_encoded_fmt_stream_map);
      parse_str($item);
     //  echo $url."<br/>........................<br/>/////".$quality."...........................<br/>";
     if(explode("/",explode(';',$type)[0])[1]=="mp4" && $quality=="medium"){
-        return $url."?title=".$title;
+        header("location:".$url."?title=".$title);
     }
      
  }
