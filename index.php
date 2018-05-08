@@ -1,5 +1,5 @@
 <?php
-$json=file_get_contents("https://www.youtube.com/get_video_info?video_id=".GET['id']);
+$json=file_get_contents("https://www.youtube.com/get_video_info?video_id=".$_GET['id']);
 parse_str($json);
 $arr=explode(',',$url_encoded_fmt_stream_map);
  foreach($arr as $item){
